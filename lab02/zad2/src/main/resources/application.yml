@@ -1,0 +1,18 @@
+auth:
+  admin:
+    username: ${ADMIN_USERNAME:admin}
+    password: ${ADMIN_USERNAME:password}
+
+api:
+  dataIo:
+    url: https://newsdata.io/api/1/news
+    name: News Data IO
+    apiKeyName: apikey
+    apiKeyValue: pub_40110e7c69f5d205223f14fb0305c4e63e78b
+    searchParameter: q
+  dataApi:
+    url: https://api.thenewsapi.com/v1/news/all
+    name: The News API
+    apiKeyName: api_token
+    apiKeyValue: Lv2HuWKNly6BQ9u0crI6yuyvxGK86YIvQLWvZKOW
+    searchParameter: search

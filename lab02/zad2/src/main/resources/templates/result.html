@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Daily news</title>
+        <link th:href="@{/styles/main.css}" rel="stylesheet">
+        <link href="../static/styles/main.css" rel="stylesheet">
+    </head>
+    <body style="text-align: center">
+        <h1>Daily news</h1>
+        <div>
+            <h2 th:text="${query}"></h2>
+            <div class="flex-container">
+                <div class="card" th:each="result : ${news}">
+                    <h4 th:text="${result.title()}"></h4>
+                    <p th:text="${result.description()}"></p>
+                    <img class="card-img" th:src="${result.imageUrl()}" alt="Not found">
+
+                    <div th:if="${result.categories() != null}" class="card-tags">
+                        <div class="card-tag" th:each="tag: ${result.categories()}" th:text="${tag}"></div>
+                    </div>
+
+                    <div class="card-footer">
+                        <a th:href="${result.source()}" target="_blank"><button class="search-button">Source</button></a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <a style="margin-top: 16px" href="http://localhost:8080/v1/news">
+                    <button class="search-button">Search page</button>
+                </a>
+                <a style="margin-top: 16px" href="http://localhost:8080/logout">
+                    <button class="search-button">Logout</button>
+                </a>
+            </div>
+        </div>
+    </body>
+</html>

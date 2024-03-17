@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/styles/main.css}" rel="stylesheet">
+    <title>Daily news</title>
+</head>
+<body style="text-align: center">
+    <h1>Daily news</h1>
+    <div class="container">
+        <form action="#" th:action="'/v1/news/search'" th:object="${query}" method="post" class="search-form" >
+            <input type="text" th:field="*{search}" class="search-input" id="search" placeholder="Search keywords">
+            <button class="search-button" type="submit">Search</button>
+        </form>
+    </div>
+    <a style="margin-top: 16px" href="http://localhost:8080/logout">
+        <button class="search-button">Logout</button>
+    </a>
+</body>
+</html>
